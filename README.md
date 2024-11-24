@@ -87,3 +87,7 @@ docker push <acr-name>.azurecr.io/housing-analysis-app:v1
 
 Deploy the container to Azure App Service:
 az webapp create --resource-group <resource-group-name> --plan <app-service-plan> --name <web-app-name> --deployment-container-image-name <acr-name>.azurecr.io/housing-analysis-app:v1
+
+
+Images
+![image](https://github.com/user-attachments/assets/1e5d9ce6-269a-4a9d-8943-34a765ac99b2)
