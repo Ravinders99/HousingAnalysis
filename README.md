@@ -91,3 +91,7 @@ az webapp create --resource-group <resource-group-name> --plan <app-service-plan
 
 Images
 ![image](https://github.com/user-attachments/assets/1e5d9ce6-269a-4a9d-8943-34a765ac99b2)
+
+![image](https://github.com/user-attachments/assets/59ed7198-6742-4b56-9727-1fbad53ce262)
+
+![image](https://github.com/user-attachments/assets/d6c9e9a0-7c17-4c7f-a706-c561cdc8a554)
