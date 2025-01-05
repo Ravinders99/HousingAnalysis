@@ -11,11 +11,20 @@ app = FastAPI()
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(BASE_DIR, "static")
 
-# Columns to keep
+# # Columns to keep
+# COLUMNS_TO_KEEP = [
+#     "latitude", "longitude", "name", "population", "price_per_m2",
+#     "province", "rooms", "year", "GST", "average_price",
+#     "total_tax_rate", "facility", "population_price_interaction", "rooms_latitude_interaction","avg_price_per_m2",
+#     "avg_total_tax_rate","affordability_index"
+# ]
+
 COLUMNS_TO_KEEP = [
     "latitude", "longitude", "name", "population", "price_per_m2",
     "province", "rooms", "year", "GST", "average_price",
-    "total_tax_rate", "facility", "population_price_interaction", "rooms_latitude_interaction"
+    "total_tax_rate", "facility", "population_price_interaction", "rooms_latitude_interaction","avg_price_per_m2",
+    "avg_total_tax_rate",
+    "affordability_index", "median_income", "housing_cost",'avg_price','avg_rooms','avg_total_taxrate','num_properties'
 ]
 
 # Mount the static folder
@@ -58,12 +67,12 @@ def get_advanced_predictions(page: int = Query(1, ge=1), limit: int = Query(100,
 # Function to process affordability by region data
 @app.get("/data/affordability_by_region")
 def get_affordability_by_region(page: int = Query(1, ge=1), limit: int = Query(100, ge=1, le=1000)):
-    return fetch_data("affordabilitybyregion.csv", page, limit)
+    return fetch_data("affordability.csv", page, limit)
 
 # Function to process regional housing characteristics data
 @app.get("/data/regional_housing_characteristics")
 def get_regional_housing_characteristics(page: int = Query(1, ge=1), limit: int = Query(100, ge=1, le=1000)):
-    return fetch_data("regionalhousecharacteristics.csv", page, limit)
+    return fetch_data("regionalhousecharacterstics.csv", page, limit)
 
 # Helper function to fetch data from local CSV
 def fetch_data(file_name: str, page: int, limit: int):
